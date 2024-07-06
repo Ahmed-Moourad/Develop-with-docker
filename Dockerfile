@@ -6,6 +6,15 @@ FROM ubuntu
 
 ENTRYPOINT [ "sleep" ]
 
+FROM ubuntu
+
+ENTRYPOINT [ "sleep" ]
+
+CMD [ "5" ]
+
+
+
+
 FROM node:13-alpine
 
 ENV MONGO_DB_USERNAME=admin \
