@@ -11,8 +11,8 @@ services:
     environment:
      - MONGO_INITDB_ROOT_USERNAME=admin
      - MONGO_INITDB_ROOT_PASSWORD=password
-    volumes:
-     - mongo-data:/data/db
+    # volumes:
+    #  - mongo-data:/data/db
   mongo-express:
     image: mongo-express
     restart: always
@@ -23,7 +23,14 @@ services:
      - ME_CONFIG_MONGODB_ADMINPASSWORD=password
      - ME_CONFIG_MONGODB_SERVER=mongodb
     depends_on:
-     - "mongodb"
-volumes:
-  mongo-data:
-    driver: local
+      - "mongodb"  
+  # db-init:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.db-init
+  #   depends_on:
+  #     - mongodb
+
+# volumes:
+#   mongo-data:
+#     driver: local
