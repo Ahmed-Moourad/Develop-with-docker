@@ -1,4 +1,4 @@
-version: '3'
+version: '3.9'
 services:
   # my-app:
     # image: ${docker-registry}/my-app:1.0
